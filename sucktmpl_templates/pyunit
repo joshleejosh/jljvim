@@ -1,0 +1,17 @@
+import sys, unittest
+
+class «Ω»NewTest(unittest.TestCase):
+    def setUp(self):
+        if sys.version_info < (3, 0):
+            self.assertCountEqual = self.assertItemsEqual
+
+    def tearDown(self):
+        pass
+
+    def test_dummy(self):
+        self.assertEqual(x, y)
+        self.assertRaises(OSError, func, arg)
+
+if __name__ == '__main__':
+    unittest.main(verbose=2)
+ 
