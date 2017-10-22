@@ -15,6 +15,7 @@ vmap <buffer> <LocalLeader>hp <LocalLeader>op<LocalLeader>c
 vmap <buffer> <LocalLeader>hc <LocalLeader>ocite<LocalLeader>c
 vmap <buffer> <LocalLeader>hm <LocalLeader>oem<LocalLeader>c
 vmap <buffer> <LocalLeader>hq <LocalLeader>oblockquote<LocalLeader>c
+vmap <buffer> <LocalLeader>hs <LocalLeader>ospan class=""<LocalLeader>c2F"
 
 vmap <buffer> <LocalLeader>h1 <LocalLeader>oh1<LocalLeader>c
 vmap <buffer> <LocalLeader>h2 <LocalLeader>oh2<LocalLeader>c

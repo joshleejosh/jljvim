@@ -33,7 +33,7 @@ setlocal ai
 
 let maplocalleader=";"
 
-nnoremap <buffer> <LocalLeader>n viws<<C-R>"><<C-R>"/><C-O>F<
+nnoremap <buffer> <LocalLeader>n viws<<C-R>"></<C-R>"><C-O>F<
 imap     <buffer> <LocalLeader>n <ESC><LocalLeader>n
 nmap     <buffer> <LocalLeader>N <LocalLeader>n<CR><CR><UP>
 imap     <buffer> <LocalLeader>N <ESC><LocalLeader>N
