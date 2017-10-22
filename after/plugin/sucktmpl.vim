@@ -3,10 +3,10 @@
 " License: MIT
 
 " INIT STUFF                                               {{{1
-"if exists('g:SuckTmplLoaded') || &cp
-"  finish
-"end
-"let g:SuckTmplLoaded = 1
+if exists('g:SuckTmplLoaded') || &cp
+  finish
+end
+let g:SuckTmplLoaded = 1
 
 let s:path = expand('<sfile>:p:h')
 let s:tmpldir = s:path . '/../../sucktmpl_templates'

@@ -1,4 +1,14 @@
-" Outlining mode includes sensible bullets and folding
+" Outlining mode includes sensible(ish) bullets and folding
+" 
+" License: MIT
+
+" INIT STUFF                                               {{{1
+if exists("g:JLJOLLoaded") || &cp
+  finish
+end
+let g:JLJOLLoaded = 1
+
+" FOLDING (broken x_x)                                     {{{1
 
 fun! JLJOLFold(lnum)
 	if getline(a:lnum) =~ '\v^\s*$'
@@ -6,7 +16,7 @@ fun! JLJOLFold(lnum)
 	end
 
 	let curind = indent(a:lnum) / &shiftwidth + 1
-	let nxtline = JLJOLNextNonBlank(a:lnum)
+	let nxtline = <SID>JLJOLNextNonBlank(a:lnum)
 	let nxtind = indent(nxtline) / &shiftwidth + 1
 
 	if curind < nxtind
@@ -16,10 +26,9 @@ fun! JLJOLFold(lnum)
 	else
 		return '='
 	end
-
 endfun
 
-fun! JLJOLNextNonBlank(lnum)
+fun! <SID>JLJOLNextNonBlank(lnum)
 	let lastln = line('$')
 	let i = a:lnum + 1
 
@@ -33,6 +42,8 @@ fun! JLJOLNextNonBlank(lnum)
 	return -2
 endfun
 
+" STATUS                                                   {{{1
+
 fun! JLJOLStatusLine()
   let line = '%<%f [outlining] %h%m%r%'
   if &ruler
@@ -41,7 +52,9 @@ fun! JLJOLStatusLine()
   return line
 endfun
 
-fun! JLJOLEnable()
+" COMMAND                                                  {{{1
+
+fun! <SID>JLJOLEnable()
   setlocal wrap tabstop=2 shiftwidth=2 noexpandtab
   setlocal breakindent breakindentopt=shift\:2 
   setlocal foldmethod=indent
@@ -50,5 +63,7 @@ fun! JLJOLEnable()
   setlocal statusline=%!JLJOLStatusLine()
 endfun
 
-command! Outlining :call JLJOLEnable()
+command! Outlining :call <SID>JLJOLEnable()
 
+" }}}
+" vim: set foldmethod=marker foldlevel=0:
